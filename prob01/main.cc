@@ -1,13 +1,16 @@
-// Please fill in below.
-// <Your name>
-// <Your section number> (e.g. CPSC 121L-01)
-// <Date>
-// <Your csu.fullerton.edu email>
-// <Your GitHub username>
+// Brian Milian
+// CPSC 121L-01
+// 2023-04-25
+// brianmilian@csu.fullerton.edu
+// @brian-250
 //
 // Lab 13-1
 // If it is a pair programming lab please specify partner below.
 // Partner: @peteranteater
+//
+// This program creates Star objects and outputs messages using
+// the constructor and destructor
+//
 
 #include <iostream>
 #include <string>
@@ -31,5 +34,14 @@ int main() {
   // destructor since it automatically gets called when the
   // Star goes out of scope, at the end of each iteration.
   // =======================================================
+  std::string name;
+  double solar_radius{0.0};
+  for (int i = 0; i < num; i++) {
+    std::cout << "Enter star " << i << "'s name: ";
+    std::cin >> name;
+    std::cout << "What is the solar radius? ";
+    std::cin >> solar_radius;
+    Star(name, solar_radius);
+  }
   return 0;
 }

@@ -1,13 +1,16 @@
-// Please fill in below.
-// <Your name>
-// <Your section number> (e.g. CPSC 121L-01)
-// <Date>
-// <Your csu.fullerton.edu email>
-// <Your GitHub username>
+// Brian Milian
+// CPSC 121L-01
+// 2023-04-25
+// brianmilian@csu.fullerton.edu
+// @brian-250
 //
 // Lab 13-1
 // If it is a pair programming lab please specify partner below.
 // Partner: @peteranteater
+//
+// This program creates Star objects and outputs messages using
+// the constructor and destructor
+//
 
 #include <iomanip>
 #include <iostream>
@@ -28,4 +31,11 @@ class Star {
   //      times the volume of the sun that the star was.
   //   4. An accessor function, `GetName` for the star's name.
   // ============================================================
+  Star(std::string name, double solar_radius);
+  ~Star();
+  std::string GetName();
+
+ private:
+  std::string name_;
+  double solar_radius_;
 };
