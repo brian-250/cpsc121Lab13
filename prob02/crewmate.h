@@ -1,13 +1,16 @@
-// Please fill in below.
-// <Your name>
-// <Your section number> (e.g. CPSC 121L-01)
-// <Date>
-// <Your csu.fullerton.edu email>
-// <Your GitHub username>
+// Brian Milian
+// CPSC 121L-01
+// 2023-04-25
+// brianmilian@csu.fullerton.edu
+// @brian-250
 //
 // Lab 13-2
 // If it is a pair programming lab please specify partner below.
 // Partner: @peteranteater
+//
+// This program uses inheritance to have derived classes call the
+// member functions of the base class
+//
 
 #include "astronaut.h"
 
@@ -20,5 +23,20 @@
 // Define the Crewmate class here, which inherits from the Astronaut
 // base class. Refer to the README for instructions.
 // ===================================================================
+class Crewmate : public Astronaut {
+ public:
+  Crewmate(std::string name, graphics::Color color);
+  Crewmate();
+  bool GetIsAlive() const;
+  void SetIsAlive(bool alive);
+  int GetTaskCount() const;
+  void DoTask(std::string task);
+  graphics::Color GetColor();
+  std::string GetIconFilename() const;
+
+ private:
+  bool alive_;
+  int task_count_;
+};
 
 #endif  // CREWMATE_H

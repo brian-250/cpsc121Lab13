@@ -1,13 +1,16 @@
-// Please fill in below.
-// <Your name>
-// <Your section number> (e.g. CPSC 121L-01)
-// <Date>
-// <Your csu.fullerton.edu email>
-// <Your GitHub username>
+// Brian Milian
+// CPSC 121L-01
+// 2023-04-25
+// brianmilian@csu.fullerton.edu
+// @brian-250
 //
 // Lab 13-2
 // If it is a pair programming lab please specify partner below.
 // Partner: @peteranteater
+//
+// This program uses inheritance to have derived classes call the
+// member functions of the base class
+//
 
 #include "impostor.h"
 
@@ -26,3 +29,10 @@
 //     }
 // to tell the compiler that each function belongs to the Impostor class.
 // ===================================================================
+Impostor::Impostor(std::string name, graphics::Color color)
+    : Astronaut(name, color) {}
+Impostor::Impostor() : Astronaut("bobby", graphics::Color(255, 0, 0)) {}
+void Impostor::Kill(Crewmate& crewmate) {
+  crewmate.SetIsAlive(false);
+  std::cout << Impostor::GetName() << " killed " << crewmate.GetName() << "\n";
+}
